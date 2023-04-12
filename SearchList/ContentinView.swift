@@ -19,12 +19,16 @@ struct ContentinView: View {
         
         NavigationView {
             
-            List(items, id: \.self) { currentItem in
-                Text(currentItem)
-            }
-                   // POST ABT THIS ON SPACES
-                    .searchable(text: $searchText)
-       
+            
+            VStack {
+                Text("Searching on: \(searchText)")
+                
+                List(items, id: \.self) { currentItem in
+                    Text(currentItem)
+                }
+                       // POST ABT THIS ON SPACES
+                        .searchable(text: $searchText)
+           }
         }
     }
 }
