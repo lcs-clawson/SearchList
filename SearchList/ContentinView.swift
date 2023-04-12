@@ -17,12 +17,14 @@ struct ContentinView: View {
     // MARK computed properties
     var body: some View {
         
-        List(items, id: \.self) { currentItem in
-            Text(currentItem)
+        NavigationView {
             
-               // POST ABT THIS ON SPACES
-                .searchable(text: $searchText)
-        
+            List(items, id: \.self) { currentItem in
+                Text(currentItem)
+            }
+                   // POST ABT THIS ON SPACES
+                    .searchable(text: $searchText)
+       
         }
     }
 }
